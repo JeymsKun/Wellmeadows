@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booking</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Book Your Appointment</h2>
+        <form>
+            <label for="appointment-number">Appointment Number</label>
+            <input type="text" id="appointment-number" name="appointment-number" required>
+
+            <label for="patient-number">Patient Number</label>
+            <input type="text" id="patient-number" name="patient-number" required>
+
+            <label for="consultant-name">Consultant Name</label>
+            <input type="text" id="consultant-name" name="consultant-name" required>
+
+            <label for="appointment-datetime">Date and Time</label>
+            <input type="datetime-local" id="appointment-datetime" name="appointment-datetime" required>
+
+            <label for="examination-room">Examination Room</label>
+            <input type="text" id="examination-room" name="examination-room" required>
+
+            <label for="patient-status">Patient Status</label>
+            <select id="patient-status" name="patient-status" required>
+                <option value="new">New</option>
+                <option value="follow-up">Follow-up</option>
+            </select>
+            <a href="index.html">Back to Home</a>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+        <li><a href="appointment.html">Book Appointment</a></li>
+    </div>
+</body>
+</html>

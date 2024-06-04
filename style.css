@@ -59,10 +59,12 @@ nav ul li a:hover {
 .hero h2 {
     margin: 0;
     font-size: 3em;
+    color: black;
 }
 
 .hero p {
     font-size: 1.2em;
+    color: black;
 }
 
 .btn {
@@ -95,3 +97,4 @@ footer {
     text-align: center;
     padding: 20px 0;
 }
+
