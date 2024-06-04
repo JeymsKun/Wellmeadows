@@ -98,3 +98,14 @@ footer {
     padding: 20px 0;
 }
 
+    .image-container {
+        display: flex;
+    }
+    
+    .image-container img {
+        width: 300px; /* Adjust the width of each image */
+        height: 200px; /* Adjust the height of each image */
+        object-fit: cover; /* Ensure the image fills its container while maintaining aspect ratio */
+        margin-right: 10px; /* Adjust spacing between images */
+    }
+    
