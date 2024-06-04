@@ -12,9 +12,9 @@
             <h1>Wellmeadows Hospital</h1>
             <nav>
                 <ul>
+                    <li><a href="login.html">Log In</a></li>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about-us">About Us</a></li>
-                    <li><a href="#login">Log In</a></li>
                 </ul>
             </nav>
         </div>
@@ -32,16 +32,21 @@
             <p>Learn more about Wellmeadows Hospital, our mission, vision, and the dedicated team working to provide the best healthcare services.</p>
         </div>
     </section>
-    <section id="login" class="section">
-        <div class="container">
-            <h2>Log In</h2>
-            <p>Access your account to manage appointments, view medical records, and more.</p>
-        </div>
-    </section>
     <footer>
         <div class="container">
             <p>&copy; 2024 Wellmeadows Hospital. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Check login status when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            var isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (!isLoggedIn) {
+                // If not logged in, redirect to login page
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
 </body>
 </html>
