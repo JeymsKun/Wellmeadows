@@ -17,7 +17,12 @@
             <input type="text" id="patient-number" name="patient-number" required>
 
             <label for="consultant-name">Consultant Name</label>
-            <input type="text" id="consultant-name" name="consultant-name" required>
+            <select id="consultant-name" name="consultant-name" required>
+            <option value="Dr. Smith">Dr. Smith</option>
+            <option value="Dr. Johnson">Dr. Johnson</option>
+            <option value="Dr. Lee">Dr. Lee</option>
+            <!-- Add more options as needed -->
+            </select>
 
             <label for="appointment-datetime">Date and Time</label>
             <input type="datetime-local" id="appointment-datetime" name="appointment-datetime" required>
@@ -30,10 +35,9 @@
                 <option value="new">New</option>
                 <option value="follow-up">Follow-up</option>
             </select>
-            <a href="index.html">Back to Home</a>
             <button type="submit" class="btn">Submit</button>
+            <a href="index.html" class="btn custom-back-btn">back</a>
         </form>
-        <li><a href="appointment.html">Book Appointment</a></li>
     </div>
 </body>
 </html>
