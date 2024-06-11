@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login As Patient</title>
+    <link rel="stylesheet" href="style3.css">
+    <script src="https://kit.fontawesome.com/a4587828a0.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-box">
+            <h1>Please Register</h1>
+            <form id="signupForm">
+                <div class="input-group">
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="firstName" placeholder="First Name">
+                    </div>
+                
+                    <div class="input-field">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="lastName" placeholder="Last Name">
+                    </div>
+                
+                    <div class="input-field">
+                        <i class="fa-solid fa-home"></i>
+                        <input type="text" id="address" placeholder="Address">
+                    </div>
+                
+                    <div class="input-field">
+                        <i class="fa-solid fa-phone"></i>
+                        <input type="text" id="telephone" placeholder="Telephone Number">
+                    </div>
+                
+                    <div class="input-field">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <input type="date" id="birthday" placeholder="Date of Birth">
+                    </div>
+                
+                    <div class="input-field">
+                        <i class="fa-solid fa-venus-mars"></i>
+                        <select id="sex">
+                            <option value="" disabled selected>Select Sex</option> 
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="non-binary">Non-binary</option>
+                        </select>
+                    </div>
+                
+                    <div class="input-field">
+                        <i class="fa-solid fa-ring"></i>
+                        <select id="maritalStatus">
+                            <option value="" disabled selected>Select Marital Status</option> 
+                            <option value="single">Single</option>
+                            <option value="married">Married</option>
+                            <option value="widowed">Widowed</option>
+                            <option value="divorced">Divorced</option>
+                        </select>
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <input type="date" id="dateRegistered" placeholder="Date Registered">
+                    </div>
+
+                    <div class="error-message" id="errorMessage">
+                        Please complete the information.
+                    </div>
+                
+                    <div class="btn-field">
+                        <button type="submit" onclick="validateForm()">Registered</button>
+                    </div>
+
+                    
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+    <!-- <div class="login-container">
+        <h2>Login As Patient</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div> -->
+
+    <!-- <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Here you should perform your login validation
+            // For simplicity, let's assume the login is successful
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // For demonstration purposes, store a flag in localStorage to indicate successful login
+            localStorage.setItem('isLoggedIn', 'true');
+
+            // Redirect to the main page
+            window.location.href = 'index.html';
+        });
+    </script> -->
+    
+    <script>
+        function validateForm() {
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var address = document.getElementById("address").value;
+            var telephone = document.getElementById("telephone").value;
+            var birthday = document.getElementById("birthday").value;
+            var sex = document.getElementById("sex").value;
+            var maritalStatus = document.getElementById("maritalStatus").value;
+            var dateRegistered = document.getElementById("dateRegistered").value;
+
+            var errorMessage = document.getElementById("errorMessage");
+            
+            if (!firstName || !lastName || !address || !telephone || !birthday || !sex || !maritalStatus || !dateRegistered) {
+                errorMessage.classList.add("visible");
+                errorMessage.classList.remove("hidden");
+                setTimeout(function() {
+                    errorMessage.classList.add("hidden");
+                    setTimeout(function() {
+                        errorMessage.classList.remove("visible");
+                    }, 2000);
+                }, 2000);
+            } else {
+                errorMessage.style.display = "none";
+                
+            }
+        }
+    </script>
+
+    <script src="hack.js"></script>
+ 
+</body>
+</html>

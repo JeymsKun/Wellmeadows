@@ -6,7 +6,7 @@ body {
     color: #333;
 }
 
-.container {
+.container-header {
     width: 80%;
     margin: 0 auto;
 }
@@ -82,6 +82,136 @@ nav ul li a:hover {
     background-color: #0056b3;
 }
 
+.login-menu {
+    position: relative; 
+}
+
+.submenu {
+    display: none; 
+    position: absolute; 
+    background-color: #f1f1f1; 
+    min-width: 160px; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
+    z-index: 1; 
+    top: 100%; 
+}
+
+.login-menu:hover .submenu {
+    display: block; 
+}
+
+.submenu a {
+    color: black; 
+    padding: 12px 16px; 
+    text-decoration: none; 
+    display: block; 
+}
+
+  
+.submenu a:hover {
+    background-color: #ddd;
+}
+  
+
+/* Fun Facts */
+.fun-facts {
+	position: relative;
+}
+
+
+.fun-facts {
+	background:url('fun-bg.jpg');
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+
+
+.fun-facts .single-fun span {
+    position: absolute;
+    margin-top: -25%;
+    margin-right: -33%;
+	color: #fff;
+	font-weight: 600;
+	font-size: 30px;
+	position: relative;
+	display: block;
+	transition: all 0.4s eas;
+	margin-bottom: 7px;
+}
+
+
+.fun-facts {
+    background-color: #3F51B5;
+    color: white; 
+    padding: 20px;
+}
+  
+  
+.container {
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+}
+
+
+.single-fun {
+    margin-bottom: 15px; 
+    text-align: center;
+    width: calc(25% - 20px); 
+    padding: 10px;
+    border-radius: 5px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+  
+.content {
+    display: flex;
+    flex-direction: column; 
+}
+
+  
+.fun-facts .single-fun p{
+    position: relative;
+    margin-bottom: 7px;
+    margin-top: -1%;
+    margin-left: 45%;
+	color: #fff;
+	font-size: 16px;
+}
+
+.fun-facts .single-fun i {
+	font-size: 62px;
+	color: #fff;
+	height: 70px;
+	width: 70px;
+	line-height: 67px;
+	font-size: 28px;
+	border: 2px solid #fff;
+	border-radius: 0px;
+	border-radius: 50%;
+}
+
+.fun-facts .single-fun:hover i{
+	color:#1A76D1;
+	background:#fff;
+	border-color: transparent;
+}
+
+.fun-facts .single-fun .content {
+	padding-left: 80px;
+}
+
+.fun-facts {
+    background-color: #3F51B5;
+    color: white;
+    padding: 20px; 
+}
+
+.single-fun {
+    margin-bottom: 15px; 
+    display: inline-block; 
+}
+/* End */
+
 .section {
     padding: 60px 0;
 }
@@ -98,14 +228,27 @@ footer {
     padding: 20px 0;
 }
 
-    .image-container {
-        display: flex;
-    }
+.image-container {
+    display: flex;
+}
     
-    .image-container img {
-        width: 300px;
-        height: 200px;
-        object-fit: cover;
-        margin-right: 10px;
-    }
+.image-container img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 10px;
+}
     
+@media (max-width: 768px) {
+
+    .single-fun {
+        width: calc(50% - 10px);
+    }
+}
+  
+@media (max-width: 480px) {
+
+    .single-fun {
+        width: 100%;
+    }
+}

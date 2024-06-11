@@ -5,33 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wellmeadows Hospital</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
+
     <header>
-        <div class="container">
-            <h1>Wellmeadows Hospital</h1>
-            <nav>
-                <ul>
-                    <li><a href="login.html">Log In</a></li>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about-us">About Us</a></li>
+        <div class="container-header">
+          <h1>Wellmeadows Hospital</h1>
+          <nav>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li class="login-menu"><a href="#home">Log In</a>
+                <ul class="submenu">  
+                  <li><a href="admin.html">Admin</a></li>
+                  <li><a href="patient.html">Patient</a></li>
                 </ul>
-            </nav>
+              </li>
+              <li><a href="#about-us">About Us</a></li>
+            </ul>
+          </nav>
         </div>
-    </header>
+      </header>
+      
+
     <main id="home">
         <div class="hero">
             <h2>Your Health, Our Priority</h2>
             <p>Book your appointment with our top-notch healthcare professionals today.</p>
             <a href="appointment.html" class="btn">Book Appointment</a>
         </div>
-    </main>
+    </main>]
+
     <section id="about-us" class="section">
-        <div class="container">
+        <div class="container-about-us">
             <h2>About Us</h2>
-            <p>Learn more about Wellmeadows Hospital, our mission, vision, and the dedicated team working to provide the best healthcare services.</p>
+            <p>Wellmeadows Hospital stands as a beacon of hope and healing in the community, dedicated to providing comprehensive healthcare services with a compassionate touch. Our mission is to deliver the highest quality of care to all individuals, regardless of their background or financial status. We strive to create an environment where every patient feels valued and respected, ensuring that their physical, mental, and social well-being is at the forefront of our services.
+
+                Our vision is to be at the forefront of medical innovation, continuously improving our practices to meet the evolving needs of our patients. We aim to be a leader in healthcare, not just within our community but also on a broader scale, by setting new standards for excellence in patient care.</p>
         </div>
     </section>
+
+    <div id="fun-facts" class="fun-facts section">
+        <div class="container">
+
+            <div class="single-fun">
+                <i class="fa-solid fa-house"></i>
+                <div class="content">
+                    <span class="counter">3468</span>
+                    <p>Hospital Rooms</p>
+                </div>
+            </div>
+ 
+            <div class="single-fun">
+                <i class="fa-solid fa-user"></i>
+                <div class="content">
+                    <span class="counter">557</span>
+                    <p>Staff and Doctors</p>
+                </div>
+            </div>
+
+            <div class="single-fun">
+                <i class="fa-regular fa-face-smile-beam"></i>
+                <div class="content">
+                    <span class="counter">4379</span>
+                    <p>Happy Patients</p>
+                </div>
+            </div>
+           
+            <div class="single-fun">
+                <i class="fa-solid fa-table"></i>
+                <div class="content">
+                    <span class="counter">32</span>
+                    <p>Years of Experience</p>
+                </div>
+            </div>
+           
+    
+        </div>
+    </div>
+
+
+
     <section id="gallery" class="section">
         <div class="container">
             <h2>Our Facilities</h2>
@@ -59,14 +115,38 @@
     </footer>
 
     <script>
-        // Check login status when the page loads
+       
         document.addEventListener('DOMContentLoaded', function() {
             var isLoggedIn = localStorage.getItem('isLoggedIn');
             if (!isLoggedIn) {
-                // If not logged in, redirect to login page
+               
                 window.location.href = 'login.html';
             }
         });
+    </script>
+
+    <script>
+        const counters = document.querySelectorAll('.counter');
+
+        counters.forEach(counter => {
+        const duration = 10000; 
+        const targetCount = parseInt(counter.textContent);
+
+        let currentCount = 0;
+
+        const animateCount = () => {
+            currentCount += Math.ceil(targetCount / (duration / 10)); 
+
+            counter.textContent = currentCount;
+
+            if (currentCount < targetCount) {
+            window.requestAnimationFrame(animateCount);
+            }
+        };
+
+        animateCount(); 
+        });
+
     </script>
 </body>
 </html>
