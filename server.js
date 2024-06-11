@@ -20,7 +20,7 @@ app.post('/register', async (req, res) => {
   try {
     const client = await pool.connect();
 
-    // Prepared statement to prevent SQL injection vulnerabilities
+   
     const query = 'INSERT INTO patients (first_name, last_name, address, telephone, birthday, sex, maritalStatus, dateRegistered) VALUES ($1, $2, ...)';
     const values = [firstName, lastName, address, telephone, birthday, sex, maritalStatus, dateRegistered];
 
@@ -31,7 +31,7 @@ app.post('/register', async (req, res) => {
     console.error('Error registering patient:', error);
     res.status(500).json({ message: 'Internal server error' });
   } finally {
-    pool.release(client); // Release the connection back to the pool
+    pool.release(client); 
   }
 });
 
